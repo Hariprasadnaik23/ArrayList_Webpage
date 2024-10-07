@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArrayList Summary</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ArrayList Summary</h1>
+
+        <section>
+            <h2>Required Packages</h2>
+            <p><code>import java.util.ArrayList;</code></p>
+        </section>
+
+        <section>
+            <h2>Syntax of Creating an ArrayList</h2>
+            <pre><code>ArrayList&lt;Type&gt; name = new ArrayList&lt;&gt;();</code></pre>
+        </section>
+
+        <section>
+            <h2>Example of Creating an ArrayList</h2>
+            <pre><code>ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();</code></pre>
+        </section>
+
+        <section>
+            <h2>Common Functions Used in ArrayList</h2>
+
+            <h3>1. <code>size()</code> - Returns the number of elements in the list</h3>
+            <p>This method is used to get the size of the ArrayList.</p>
+            <pre><code>// Example
+import java.util.ArrayList;
+
+public class Example {
+    public static void main(String[] args) {
+        ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+        list.add(10);
+        list.add(20);
+        System.out.println("Size of the list: " + list.size());
+    }
+}
+// Output: Size of the list: 2
+            </code></pre>
+
+            <h3>2. <code>add(element)</code> - Adds an element to the list</h3>
+            <p>This method adds an element to the end of the ArrayList.</p>
+            <pre><code>// Example
+import java.util.ArrayList;
+
+public class Example {
+    public static void main(String[] args) {
+        ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+        list.add(10);
+        list.add(20);
+        System.out.println("List: " + list);
+    }
+}
+// Output: List: [10, 20]
+            </code></pre>
+
+            <h3>3. <code>add(index, element)</code> - Inserts an element at the specified index</h3>
+            <p>This method adds an element at a specific position in the ArrayList.</p>
+            <pre><code>// Example
+import java.util.ArrayList;
+
+public class Example {
+    public static void main(String[] args) {
+        ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+        list.add(10);
+        list.add(20);
+        list.add(1, 15);
+        System.out.println("List: " + list);
+    }
+}
+// Output: List: [10, 15, 20]
+            </code></pre>
+
+            <h3>4. <code>get(index)</code> - Returns the element at the specified index</h3>
+            <p>This method fetches the element located at the given index.</p>
+            <pre><code>// Example
+import java.util.ArrayList;
+
+public class Example {
+    public static void main(String[] args) {
+        ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+        list.add(10);
+        list.add(20);
+        System.out.println("Element at index 1: " + list.get(1));
+    }
+}
+// Output: Element at index 1: 20
+            </code></pre>
+
+            <h3>5. <code>set(index, element)</code> - Replaces the element at the specified index</h3>
+            <p>This method updates the element at a particular index with a new value.</p>
+            <pre><code>// Example
+import java.util.ArrayList;
+
+public class Example {
+    public static void main(String[] args) {
+        ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+        list.add(10);
+        list.add(20);
+        list.set(1, 30);
+        System.out.println("List after update: " + list);
+    }
+}
+// Output: List after update: [10, 30]
+            </code></pre>
+
+            <h3>6. <code>remove(element)</code> - Removes the specified element from the list</h3>
+            <p>This method removes the first occurrence of the element from the ArrayList.</p>
+            <pre><code>// Example
+import java.util.ArrayList;
+
+public class Example {
+    public static void main(String[] args) {
+        ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+        list.add(10);
+        list.add(20);
+        list.remove(Integer.valueOf(10));
+        System.out.println("List after removal: " + list);
+    }
+}
+// Output: List after removal: [20]
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Example Problem: Move All Zeros to the End</h2>
+            <p>This problem involves moving all zeros in an ArrayList to the end of the list while maintaining the order of other elements.</p>
+            <pre><code>// LeetCode Example
+
+                package ArrayList_Examples;
+
+                import java.util.ArrayList;
+                import java.util.Collections;
+                
+                public class Medium_Question3 {
+                    public static void main(String args[]) {
+                        ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+                        Collections.addAll(list, 0, 23, 22, 0, 5, 0, 9, 22, 11, 23, 0);
+                        int index = 0;
+                        for (int i = 0; i < list.size(); i++) {
+                            if (list.get(i) != 0) {
+                                list.set(index, list.get(i));
+                                index++;
+                            }
+                        }
+                        for (int i = index - 1; i < list.size(); i++) {
+                            list.set(i, 0);
+                        }
+                        System.out.println("list after moving zeros: " + list);
+                    }
+                }
+                
+// Output: List after moving zeros: [23, 22, 5, 9, 22, 11, 0, 0, 0, 0, 0]
+            </code></pre>
+        </section>
+    </div>
+</body>
+</html>
